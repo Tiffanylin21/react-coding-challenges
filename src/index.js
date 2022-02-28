@@ -10,6 +10,4 @@ ReactDOM.render(
     <Routes />
   </AppContainer>,
   document.getElementById('root'),
-  // document.documentElement.classList.add('main'), // check if needed
-  // document.documentElement.classList.add('dark-mode')
 );
