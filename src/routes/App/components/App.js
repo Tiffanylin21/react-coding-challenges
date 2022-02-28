@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import '../styles/_app.scss';
-
+import { useGlobalState, setGlobalState } from '../state';
 
 function App() {
 
-  const [isDark, setIsDark] = React.useState(false);
+  const [isDark] = useGlobalState("isDarkMode");
+
 
   const toggleMode = () => {
-    setIsDark(!isDark);
-    if (document.documentElement.classList.contains('dark-mode')) {
+    setGlobalState("isDarkMode", !isDark);
+    if (isDark) {
       document.documentElement.classList.remove('dark-mode'); 
     } else {
       document.documentElement.classList.add('dark-mode');  
